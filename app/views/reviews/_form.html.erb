@@ -1,0 +1,13 @@
+<%= form_for([@performer, @performer.reviews.build]) do |f| %>
+  <div class="field">
+    <%= f.label :reviewer %><br />
+    <%= f.text_field :reviewer %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
