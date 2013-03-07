@@ -45,13 +45,5 @@ describe User do
     describe "with valid password" do
       it { should == found_user.authenticate(@user.password) }
     end
-
-    descibe "with invalid password" do
-      let(:user_for_invalid_password) { found_user.authenticate("invalid") }
-      
-      it { should_not == user_for_invalid_password }
-      specify { user_for_invalid_password.should be_false }
-    end
   end
-
 end
