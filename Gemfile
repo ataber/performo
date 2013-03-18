@@ -25,7 +25,9 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 gem 'jquery-rails'
