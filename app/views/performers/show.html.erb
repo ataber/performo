@@ -1,3 +1,5 @@
+<title>View performer</title>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -13,9 +15,8 @@
 <h2>Reviews</h2>
 <%= render @performer.reviews %>
 
-<h3>Add review</h3>
-<%= render "reviews/form" %>
-
 <br />
+
+<%= link_to "Edit listing", edit_performer_path(@performer) %>
 
 <%= link_to 'Back', performers_path %>

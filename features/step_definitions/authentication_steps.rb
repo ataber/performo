@@ -21,6 +21,13 @@ When /^the user submits valid signin information$/ do
   click_button "Sign in"
 end
 
+Given /^the user is signed in$/ do
+  visit signin_path
+  fill_in "Email",    with: @user.email
+  fill_in "Password", with: @user.password 
+  click_button "Sign in"
+end
+
 Then /^he should see his profile page$/ do
   page.should have_selector('title', text: @user.name)
 end

@@ -1,11 +1,11 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "Performo", root_path, class: "logo" %>
       <nav>
 
         <ul class="nav pull-right">
-          <li class="btn btn-small"><%= link_to "List your band", new_performer_path %></li>
+          <li class="btn"><%= link_to "List your band", new_performer_path %></li>
           <li><%= link_to "Home",    root_path %></li>
           <li><%= link_to "Help",    help_path %></li>
           <% if signed_in? %>
