@@ -12,10 +12,7 @@
 <% @performers.each do |performer| %>
   <tr>
     <td><%= performer.name %></td>
-    <td><%= performer.description %></td>
-    <td><%= link_to 'Show', performer %></td>
-    <td><%= link_to 'Edit', edit_performer_path(performer) %></td>
-    <td><%= link_to 'Destroy', performer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Details', performer %></td>
   </tr>
 <% end %>
 </table>
