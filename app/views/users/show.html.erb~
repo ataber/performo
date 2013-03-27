@@ -1,0 +1,26 @@
+<title><%= @user.name %></title>
+<div class="row-fluid">
+  <span class="span10">
+    <section>
+    <h1>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h1>
+    </section>
+    <div class="row-fluid">
+      <span class="span6">
+        <% if @user.performers.any? %>
+          <h3>Listed Performers (<%= @user.performers.count %>)</h3>
+          <ol class="performers">
+            <%= render @performers %>
+          </ol>
+          <%= will_paginate @performers %>
+        <% end %>
+      </span>
+      <span class="span6">
+        derup
+      </span>
+    </div>
+  </div>
+</span>
+</div>

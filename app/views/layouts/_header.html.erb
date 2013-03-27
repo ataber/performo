@@ -1,35 +1,35 @@
 <header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "Performo", root_path, class: "logo" %>
-      <nav>
-        <form class="form-search pull-left">
-          <input type="text" class="input-medium search-query">
-          <button type="submit" class="btn">Search</button>
-        </form>
-        <ul class="nav pull-right">
-          <li class="btn"><%= link_to "List your band", new_performer_path %></li>
-          <li><%= link_to "Home",    root_path %></li>
-          <li><%= link_to "Help",    help_path %></li>
-          <% if signed_in? %>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
-          <% end %>
+<div class="navbar-inner">
+  <div class="container">
+    <%= link_to "Performo", root_path, class: "logo" %>
+    <nav>
+    <form class="form-search pull-left">
+      <input type="text" class="input-medium search-query">
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <li class="btn btn-small btn-primary pull-right"><%= link_to "List your band", new_performer_path %>  <i class="icon-music icon-white"></i></li>
+    <ul class="nav pull-right">
+      <li><%= link_to "Home",    root_path %></li>
+      <li><%= link_to "Help",    help_path %></li>
+      <% if signed_in? %>
+        <li id="fat-menu" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Account <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+          <li class="divider"></li>
+          <li>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+          </li>
         </ul>
-      </nav>
-    </div>
+        </li>
+      <% else %>
+        <li><%= link_to "Sign in", signin_path %></li>
+      <% end %>
+    </ul>
+    </nav>
   </div>
+</div>
 </header>
