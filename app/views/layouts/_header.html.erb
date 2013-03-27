@@ -3,7 +3,10 @@
     <div class="container">
       <%= link_to "Performo", root_path, class: "logo" %>
       <nav>
-
+        <form class="form-search pull-left">
+          <input type="text" class="input-medium search-query">
+          <button type="submit" class="btn">Search</button>
+        </form>
         <ul class="nav pull-right">
           <li class="btn"><%= link_to "List your band", new_performer_path %></li>
           <li><%= link_to "Home",    root_path %></li>

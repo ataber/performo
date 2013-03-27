@@ -10,11 +10,16 @@ Performo::Application.routes.draw do
   match '/news', to: 'static_pages#news'
 
   root :to => "static_pages#home"
-  
+
   resources :users
+  
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :performers do
+    collection do
+      get :search
+    end
+
     resources :reviews
   end
   # The priority is based upon order of creation:

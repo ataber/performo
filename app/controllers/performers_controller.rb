@@ -2,7 +2,7 @@ class PerformersController < ApplicationController
   # GET /performers
   # GET /performers.json
   before_filter :signed_in_user, except: [:index]
-  before_filter :correct_user, only: [:update, :delete]
+  #before_filter :correct_user, only: [:edit,:update, :delete]
 
   def index
     @performers = Performer.all
@@ -43,14 +43,14 @@ class PerformersController < ApplicationController
   # POST /performers
   # POST /performers.json
   def create
-    @performer = Performer.new(params[:performer])
+    @performer = current_user.performers.build(params[:performer])
 
     respond_to do |format|
       if @performer.save
-        format.html { redirect_to @performer, notice: 'Performer was successfully created.' }
-        format.json { render json: @performer, status: :created, location: @performer }
+        format.html { redirect_to @performer, notice: 'Performer was successfully saved.' }
+        format.json { head :no_content }
       else
-        flash.now[:error] = 'Unable to save performer' 
+        flash.now[:error] = "Unable to save performer"
         format.html { render action: "new" }
         format.json { render json: @performer.errors, status: :unprocessable_entity }
       end
@@ -86,18 +86,4 @@ class PerformersController < ApplicationController
   end
 
   # FIXME: duplicate code (user_controller.rb duplicated)
-  private
-
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in." unless signed_in?
-      end
-    end
-
-    def correct_user
-      @user = User.find_by_id(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
-    end
-
 end

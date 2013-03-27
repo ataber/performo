@@ -22,5 +22,5 @@ Then /^he should see the sign in page$/ do
 end
 
 Then /^he should see an edit link$/ do
-  page.should have_link('Edit listing', href: edit_performer_path(@performer))
+  page.should have_link('Edit listing', href: edit_performer_path)
 end

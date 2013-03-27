@@ -5,4 +5,10 @@ FactoryGirl.define do
     password "foobar"
     password_confirmation "foobar"
   end
+
+  factory :performer do
+    name "Pink Floyd"
+    description "I'm pink floyd"
+    user
+  end
 end

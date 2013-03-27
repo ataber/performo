@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @performers = @user.performers
   end
 
   def new
@@ -40,13 +41,6 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
   private 
-
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in." unless signed_in?
-      end
-    end
 
     def correct_user
       @user = User.find_by_id(params[:id])

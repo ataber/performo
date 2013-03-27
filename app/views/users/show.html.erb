@@ -1,11 +1,19 @@
 <title><%= @user.name %></title>
 <div class="row">
-  <aside class="span4">
+  <span class="span6">
     <section>
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
     </section>
-  </aside>
+    <div class="span8 offset6">
+      <% if @user.performers.any? %>
+        <h3>Listed Performers (<%= @user.performers.count %>)</h3>
+        <ol class="performers">
+          <%= render @performers %>
+        </ol>
+      <% end %>
+    </div>
+  </span>
 </div>

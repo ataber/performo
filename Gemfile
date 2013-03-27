@@ -9,6 +9,9 @@ gem 'sqlite3', :group => [:development, :test]
 
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
+#gem 'sunspot_rails', '~> 1.3.0'
+#gem 'sunspot_solr'
+gem 'will_paginate', '~> 3.0.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
