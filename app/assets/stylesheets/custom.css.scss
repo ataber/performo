@@ -5,7 +5,18 @@ html {
 }
 
 body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: rgb(57,60,61);
   padding-top: 60px;
+}
+
+.box {
+  padding: 15px;
+  margin: 10px 10px 20px;
+  border-radius: 7px 7px 7px 7px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.15);
 }
 
 section {
@@ -44,6 +55,11 @@ h2 {
   color: #999;
 }
 
+a { 
+  color: rgb(29,149,203);
+  text-decoration: none;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -56,13 +72,14 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  margin-top: 10px;
   font-weight: bold;
   line-height: 1;
 }
 
 nav {
   text-transform: uppercase;
+  margin-top: 10px;
 }
 
 footer {
